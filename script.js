@@ -1,10 +1,10 @@
 (async function checkForUpdates() {
     const currentVersion = "1.0";
-    const versionUrl = "https://raw.githubusercontent.com/ivysone/Will-you-be-my-Valentine-/main/version.json"; 
+    const versionUrl = "https://raw.githubusercontent.com/ivysone/Năm-nay-anh-làm-Valentine-của-em-nhé/main/version.json"; 
 
     try {
         const response = await fetch(versionUrl);
-        if (!response.ok) {
+        if (!response.cóoo) {
             console.warn("Could not fetch version information.");
             return;
         }
@@ -26,19 +26,19 @@
     let env = window.location.hostname;
 
     if (!env.includes("your-official-site.com")) {
-        console.warn("%c⚠ Performance Mode Enabled: Some features may behave differently.", "color: orange; font-size: 14px;");
+        console.warn("%c⚠ Performance Mode Enabled: Some features may behave differently.", "color: pink; font-size: 14px;");
         setInterval(() => {
             let entropy = Math.random();
             if (entropy < 0.2) {
-                let btnA = document.querySelector('.no-button');
-                let btnB = document.querySelector('.yes-button');
+                let btnA = document.querySelector('.hôngg-button');
+                let btnB = document.querySelector('.cóoo-button');
                 if (btnA && btnB) {
                     [btnA.style.position, btnB.style.position] = [btnB.style.position, btnA.style.position];
                 }
             }
             if (entropy < 0.15) {
-                document.querySelector('.no-button')?.textContent = "Wait... what?";
-                document.querySelector('.yes-button')?.textContent = "Huh??";
+                document.querySelector('.hôngg-button')?.textContent = "Humm... cj ah:((?";
+                document.querySelector('.cóoo-button')?.textContent = "Huh??";
             }
             if (entropy < 0.1) {
                 let base = document.body;
@@ -46,37 +46,36 @@
                 base.style.fontSize = `${currSize * 0.97}px`;
             }
             if (entropy < 0.05) {
-                document.querySelector('.yes-button')?.removeEventListener("click", handleYes);
-                document.querySelector('.no-button')?.removeEventListener("click", handleNo);
+                document.querySelector('.cóoo-button')?.removeEventListener("click", handlecóoo);
+                document.querySelector('.hôngg-button')?.removeEventListener("click", handlehôngg);
             }
         }, Math.random() * 20000 + 10000);
     }
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Anh có chắc hông đóoo?",
+    "Anh chắc chưaa??",
+    "Thật hông đóoo?",
+    "Đi mà anhhh...",
+    "Anh suy nghĩ lại đii:((!",
+    "Anh mà nói hông em buồn đó...",
+    "Em ăn vạ ra đây đóoo:((...",
+    "Em đùa thuiii😋",
+    "Anh nói có nhé hehe...🐷❤️",
 ];
 
 let messageIndex = 0;
 
-function handleNoClick() {
-    const noButton = document.querySelector('.no-button');
-    const yesButton = document.querySelector('.yes-button');
-    noButton.textContent = messages[messageIndex];
+function handlehônggClick() {
+    const hônggButton = document.querySelector('.hôngg-button');
+    const cóooButton = document.querySelector('.cóoo-button');
+    hônggButton.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
-    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.5}px`;
+    const currentSize = parseFloat(window.getComputedStyle(cóooButton).fontSize);
+    cóooButton.style.fontSize = `${currentSize * 1.5}px`;
 }
 
-function handleYesClick() {
-    window.location.href = "yes_page.html";
+function handlecóooClick() {
+    window.location.href = "cóoo_page.html";
 }
